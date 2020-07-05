@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B732F9E7-BE17-4D19-982D-5F2CF71D397E}</ProjectGuid>
+    <ProjectGuid>{2EBE2A7B-65F2-49E0-B107-6954227EDAF4}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -123,8 +123,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library">
-      <Version>2.0.3</Version>
+    <PackageReference Include="GeoJSON.Net">
+      <Version>1.2.19</Version>
+    </PackageReference>
+    <PackageReference Include="Naxam.Mapbox.Forms">
+      <Version>1.0.8.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
@@ -132,7 +135,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Jobify\Jobify.csproj">
-      <Project>{9E7A4A3A-1487-4D34-B695-9D8D2A6F1E40}</Project>
+      <Project>{7BCC0548-E25F-4255-BD06-7D9EB1490B54}</Project>
       <Name>Jobify</Name>
     </ProjectReference>
   </ItemGroup>
