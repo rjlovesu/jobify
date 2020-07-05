@@ -11,7 +11,7 @@
         <!-- Place new controls here -->
         <Label Text="MapBox Test!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" 
+           VerticalOptions="Center" 
         />
 
         <local:MapView 
