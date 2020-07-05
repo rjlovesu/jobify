@@ -7,10 +7,27 @@
              x:Class="Jobify.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Avoid triggering the bomb!"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+        <Button Text="1"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+                Clicked="ButtonClicked"/>
+
+        <Button Text="2"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               Clicked="ButtonClicked"/>
+        <Button Text="3"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+                Clicked="ButtonClicked"/>
+        
+        <Label Text="Tests" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Center" />
     </StackLayout>
 
 </ContentPage>
