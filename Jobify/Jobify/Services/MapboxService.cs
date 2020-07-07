@@ -14,7 +14,6 @@ namespace Jobify.Services
     public class MapBoxService : IMapBoxService
     {
         HttpClient client;
-        static string BaseURL = "https://api.mapbox.com/";
         public static string AccessToken = "pk.eyJ1Ijoicmpsb3Zlc3UiLCJhIjoiY2tjOTI3cHJwMWgzNTJ5bWd5NThwYXRiNCJ9.G-uKLaOpum6vM2moGCAUww";
         public static string Username = "rjlovesu";
         public MapBoxService()

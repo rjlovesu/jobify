@@ -14,7 +14,7 @@ namespace Jobify.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Com.Mapbox.Mapboxsdk.Mapbox.GetInstance(this, Jobify.Services.MapboxService.AccessToken);
+            Com.Mapbox.Mapboxsdk.Mapbox.GetInstance(this, Services.MapBoxService.AccessToken);
             
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
