@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,xamarinstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,xamarinstudio
 
+### Put "_gitign_" in front of file or folder to ignore it ###
+_gitign_*
+
 ### XamarinStudio ###
 bin/
 obj/

@@ -1,12 +1,14 @@
-﻿using Naxam.Mapbox;
+﻿
+
+using Xamarin.Forms.Maps;
 
 namespace Jobify.Models {
     public class Job {
-        public LatLng JobLocation { get; set; }
+        public Position Location { get; set; }
         public string Name { get; set; }
 
-        public Job(LatLng jobLocation, string name) {
-            JobLocation = jobLocation;
+        public Job(Position location, string name) {
+            Location = location;
             Name = name;
         }
     }
