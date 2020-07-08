@@ -6,22 +6,28 @@
              xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
              x:Class="Jobify.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Google Maps Test" 
-           HorizontalOptions="Center"
-           VerticalOptions="Center" />
-
-        <map:Map x:Name="MainMap" MapType="Street" HasZoomEnabled="True">
+    <RelativeLayout>
+        <map:Map x:Name="MainMap" MapType="Street" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FF00FF"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
             <map:Map.ItemTemplate>
                 <DataTemplate>
                     <map:Pin Position="{Binding Location}"
-                             Label="{Binding Name}"/>
+                            Label="{Binding Name}"/>
                 </DataTemplate>
             </map:Map.ItemTemplate>
         </map:Map>
+        <BoxView BackgroundColor="#FF0000">
 
-    </StackLayout>
+        </BoxView>
+        <BoxView BackgroundColor="#0000FF"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-40}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-40}">
+        </BoxView>
+        <BoxView BackgroundColor="#00FF00"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-40}">
+        </BoxView>
+
+    </RelativeLayout>
 
 </ContentPage>
