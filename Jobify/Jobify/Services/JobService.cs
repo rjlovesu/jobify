@@ -1,6 +1,6 @@
 ﻿using Jobify.Models;
 using System.Collections.Generic;
-using Xamarin.Forms.Maps;
+using Xamarin.Forms.GoogleMaps;
 
 namespace Jobify.Services
 {
@@ -14,7 +14,7 @@ namespace Jobify.Services
             new Job(new Position(56.633684, 23.772365),"JobExample4"),
             new Job(new Position(57.125913, 24.761135),"JobExample5"),
             new Job(new Position(56.916608, 23.319179),"JobExample6"),
-            new Job(new Position(56.567159, 23.720180),"JobExample7"),
+            new Job(new Position(56.567159, 23.720180),"JobExample7")
         };
 
         public List<Job> GetAllJobs() {

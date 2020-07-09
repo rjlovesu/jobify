@@ -11,8 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="JSONstyles\MapStyle.json" />
+    <None Remove="JSONstyles\MapStyle_.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MapStyle.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.1080" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="JSONstyles\MapStyle.json" />
   </ItemGroup>
 </Project>

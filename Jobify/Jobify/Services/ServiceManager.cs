@@ -28,7 +28,7 @@ namespace Jobify.Services {
             try {
                 return Services[type];
             }catch(KeyNotFoundException e) {
-                Debug.Fail("No such service found!");
+                Console.WriteLine("No such service found!");
                 throw e;
             }
         }

@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
              mc:Ignorable="d"
              x:Class="Jobify.MainPage">
     <RelativeLayout>
-        <map:Map x:Name="MainMap" MapType="Street" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FF00FF"
+        <map:Map x:Name="MainMap" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FF00FF"
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
             <map:Map.ItemTemplate>

@@ -1,6 +1,6 @@
 ﻿
 
-using Xamarin.Forms.Maps;
+using Xamarin.Forms.GoogleMaps;
 
 namespace Jobify.Models {
     public class Job {
