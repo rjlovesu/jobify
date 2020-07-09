@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="MapStyle.json" />
+    <EmbeddedResource Include="Map\MapStyle.json" />
   </ItemGroup>
 
   <ItemGroup>

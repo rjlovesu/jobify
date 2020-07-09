@@ -6,8 +6,8 @@
              xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
              mc:Ignorable="d"
              x:Class="Jobify.MainPage">
-    <RelativeLayout>
-        <map:Map x:Name="MainMap" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FF00FF"
+    <RelativeLayout x:Name="RLayout">
+        <map:Map x:Name="MainMap" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FFFFFF" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
             <map:Map.ItemTemplate>
@@ -17,17 +17,5 @@
                 </DataTemplate>
             </map:Map.ItemTemplate>
         </map:Map>
-        <BoxView BackgroundColor="#FF0000">
-
-        </BoxView>
-        <BoxView BackgroundColor="#0000FF"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-40}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-40}">
-        </BoxView>
-        <BoxView BackgroundColor="#00FF00"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-40}">
-        </BoxView>
-
     </RelativeLayout>
-
 </ContentPage>
