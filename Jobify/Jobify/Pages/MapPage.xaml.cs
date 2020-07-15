@@ -1,19 +1,19 @@
-﻿using Jobify.Services;
+﻿using Jobify.Pages.Views;
+using Jobify.Services;
 using System;
 using System.ComponentModel;
-using System.Net;
 using System.Reflection;
-using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.GoogleMaps;
-//using Xamarin.Forms.Maps;
 
-namespace Jobify {
+namespace Jobify.Pages {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage {
-        public MainPage() {
+    public partial class MapPage : ContentPage {
+        MainMenu Main;
+
+        public MapPage() {
             InitializeComponent();
             SetButtons();
             StyleMap();
@@ -23,36 +23,52 @@ namespace Jobify {
         void SetButtons() {
             var hamburger_button = new ImageButton() {
                 Source = "hamburger.png",
-                BackgroundColor = new Color(0, 0, 0, 0)
+                BackgroundColor = new Color(0, 0, 0, 0),
+                
             };
+            hamburger_button.Clicked += HamburgerButtonClicked;
+
             RLayout.Children.Add(hamburger_button,
                 Constraint.RelativeToParent(rl => rl.Width * 0.03),
-                Constraint.RelativeToParent(rl => rl.Width * 0.03));
+                Constraint.RelativeToParent(rl => rl.Width * 0.03),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1));
 
             var filter_button = new ImageButton() {
                 Source = "suitcase.png",
-                BackgroundColor= new Color(0,0,0,0)
+                BackgroundColor= new Color(0, 0, 0, 0)
             };
             RLayout.Children.Add(filter_button,
-                Constraint.RelativeToView(hamburger_button, (rl, fb) => rl.Width - rl.Width * 0.03 - fb.Width),
-                Constraint.RelativeToParent(rl => rl.Width * 0.03));
+                Constraint.RelativeToParent(rl => rl.Width - rl.Width * 0.04 - rl.Width * 0.08),
+                Constraint.RelativeToParent(rl => rl.Width * 0.05),
+                Constraint.RelativeToParent(rl => rl.Width * 0.08),
+                Constraint.RelativeToParent(rl => rl.Width * 0.065));
 
             var location_button = new ImageButton() {
                 Source = "target.png",
-                BackgroundColor = new Color(0, 0, 0, 0)
+                BackgroundColor = new Color(0, 0, 0, 0),
+                
             };
             RLayout.Children.Add(location_button,
-                Constraint.RelativeToView(hamburger_button, (rl, lb) => rl.Width - rl.Width * 0.03 - lb.Width),
-                Constraint.RelativeToView(hamburger_button, (rl, lb) => rl.Height - rl.Width * 0.03 - lb.Height));
+                Constraint.RelativeToParent(rl => rl.Width - rl.Width * 0.03 - rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Height - rl.Width * 0.03 - rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1));
 
+            Main = new MainMenu() {
+                IsVisible = false
+            };
+            RLayout.Children.Add(Main,
+                Constraint.Constant(0),
+                Constraint.Constant(0),
+                Constraint.RelativeToParent(rl => rl.Width * 1),
+                Constraint.RelativeToParent(rl => rl.Height * 1));
         }
 
 
         void StyleMap() {
-
-
             try {
-                var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+                var assembly = typeof(MapPage).GetTypeInfo().Assembly;
                 var stream = assembly.GetManifestResourceStream($"Jobify.Map.MapStyle.json");
                 Console.WriteLine(stream.ToString());
                 string styleFile;
@@ -81,6 +97,10 @@ namespace Jobify {
                 Distance.FromKilometers(100))
                 );
 
+        }
+
+        void HamburgerButtonClicked(object sender, EventArgs e) {
+            Main.IsVisible = true;
         }
     }
 }

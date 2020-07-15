@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobify.Android", "Jobify\Jo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobify.iOS", "Jobify\Jobify.iOS\Jobify.iOS.csproj", "{488E8B69-43F7-49D3-975D-E6ADF2E416C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobify", "Jobify\Jobify\Jobify.csproj", "{2A234712-0EBA-4412-8D7F-E8043936B0DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jobify", "Jobify\Jobify\Jobify.csproj", "{2A234712-0EBA-4412-8D7F-E8043936B0DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

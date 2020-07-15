@@ -28,4 +28,16 @@
   <ItemGroup>
     <Resource Include="JSONstyles\MapStyle.json" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Views\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\Views\MainMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

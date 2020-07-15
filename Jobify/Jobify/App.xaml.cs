@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jobify.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +8,7 @@ namespace Jobify {
         public App() {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MapPage();
         }
 
         protected override void OnStart() {
