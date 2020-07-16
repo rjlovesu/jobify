@@ -5,8 +5,10 @@ using System.ComponentModel;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.GoogleMaps;
+using Xamarin.Forms.Internals;
 
 namespace Jobify.Pages {
+
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
@@ -15,11 +17,13 @@ namespace Jobify.Pages {
 
         public MapPage() {
             InitializeComponent();
+
             SetButtons();
             StyleMap();
             UpdateMap();
         }
 
+        
         void SetButtons() {
             var hamburger_button = new ImageButton() {
                 Source = "hamburger.png",
@@ -87,15 +91,22 @@ namespace Jobify.Pages {
         }
 
         async void UpdateMap() {
-            //adding pins where jobs are
-            MainMap.ItemsSource = ((JobService)ServiceManager.Instance.GetService(typeof(JobService))).GetAllJobs();
-
             //centering the map on user
             var user_location = await Xamarin.Essentials.Geolocation.GetLocationAsync();
             MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(user_location.Latitude, user_location.Longitude),
                 Distance.FromKilometers(100))
                 );
+
+            //adding pins where jobs are
+            ((JobService)ServiceManager.Instance.GetService(typeof(JobService))).GetAllJobs()
+                .ForEach(job => MainMap.Pins.Add(new Pin() {
+                    Label=job.Title,
+                    Position=job.Location
+                    
+                }));
+
+            
 
         }
 

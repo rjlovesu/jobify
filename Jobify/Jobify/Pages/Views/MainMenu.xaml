@@ -20,6 +20,7 @@
                      }">
 
             </BoxView>
+            
             <RelativeLayout BackgroundColor="White"
                 RelativeLayout.WidthConstraint="{ConstraintExpression
                     Type=RelativeToParent,
@@ -42,8 +43,19 @@
                     Type=Constant,
                     Constant=60
                 }">
-                    <Image Source="{Binding Icon}"></Image>
-                    <Label Text="{Binding Text}" VerticalTextAlignment="Center" FontSize="Small" />
+                    <Image Source="profile.png"></Image>
+                    <StackLayout Orientation="Vertical">
+                        <Label FontSize="12" FontAttributes="Bold" >
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="Name"/>
+                                    <Binding Path="Surname"/>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                        <Label Text="100 points" FontSize="10" TextColor="Gray" />
+                    </StackLayout>
+                    
                 </StackLayout>
 
                 <StackLayout VerticalOptions="FillAndExpand"  BackgroundColor="#ffffff" x:Name="MenuLayout"

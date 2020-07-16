@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jobify.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -30,19 +31,17 @@ namespace Jobify.Pages.Views {
                 new MainMenuItem("Settings"         ,"cog.png"          ,Settings)
             };
 
-            LogoutItem = new MainMenuItem("Logout", "exit.png",Logout);
+            LogoutItem = new MainMenuItem("Logout", "exit.png", () => { });
             LogoutButton.BindingContext = LogoutItem;
             var logoutTap = new TapGestureRecognizer();
-            logoutTap.Tapped += (sender, e) => LogoutItem.Action();
+            logoutTap.Tapped += Logout;
             LogoutButton.GestureRecognizers.Add(logoutTap);
 
 
             var boxTapHandler = new TapGestureRecognizer();
             boxTapHandler.Tapped += CloseMenu;
             Background.GestureRecognizers.Add(boxTapHandler);
-
-            ProfileItem = new MainMenuItem("_username placeholder_", "profile.png", () => { });
-            UserData.BindingContext = ProfileItem;
+            UserData.BindingContext = ((UserService)ServiceManager.Instance.GetService(typeof(UserService))).loggedUser;
             
         }
 
@@ -90,9 +89,13 @@ namespace Jobify.Pages.Views {
             Console.WriteLine("Ought to be implemented");
         }
 
-        private void Logout() {
-            //TODO
-            Console.WriteLine("Ought to be implemented");
+        private async void Logout(object sender, EventArgs e) {
+            var pages_to_remove = Navigation.NavigationStack.ToList();
+            await Navigation.PushAsync(new LoginPage());
+
+            foreach(var item in pages_to_remove)
+                Navigation.RemovePage(item);
+
         }
     }
 

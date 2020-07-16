@@ -5,18 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
              mc:Ignorable="d"
-             x:Class="Jobify.Pages.MapPage">
+             x:Class="Jobify.Pages.MapPage"
+             NavigationPage.HasNavigationBar="False">
     <RelativeLayout x:Name="RLayout">
         <map:Map x:Name="MainMap" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FFFFFF" 
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+            <!--
             <map:Map.ItemTemplate>
                 <DataTemplate>
-                    <map:Pin Position="{Binding Location}"
-                        Label="{Binding Name}"/>
+                    <map:Pin Position="{Binding Location}" Label="{Binding Name}" />
                 </DataTemplate>
             </map:Map.ItemTemplate>
-            
+            -->
         </map:Map>
     </RelativeLayout>
 </ContentPage>

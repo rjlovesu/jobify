@@ -8,7 +8,7 @@ namespace Jobify {
         public App() {
             InitializeComponent();
 
-            MainPage = new MapPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart() {

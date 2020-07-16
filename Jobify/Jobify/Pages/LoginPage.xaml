@@ -4,7 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Jobify.Pages.Page1">
+             x:Class="Jobify.Pages.LoginPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="35,35,35,35">
+                <Image HorizontalOptions="CenterAndExpand" Source="jobify.png"></Image>
+                <Label HorizontalOptions="Start" Text="Sign  in"  FontSize="18" FontAttributes="Bold"></Label>
+                <Label HorizontalOptions="Start" Text="Hi there, nice to see you!"></Label>
+                <Label HorizontalOptions="Start" Text="Email" TextColor="#1b4899" FontAttributes="Bold"  FontSize="16"></Label>
+                <Entry HorizontalOptions="FillAndExpand" x:Name="UsernameEntry"></Entry>
+                <Label HorizontalOptions="Start" Text="Password" TextColor="#1b4899" FontAttributes="Bold" FontSize="16" ></Label>
+                <Entry HorizontalOptions="FillAndExpand" x:Name="PasswordEntry" IsPassword="true"></Entry>
+                <Button HorizontalOptions="FillAndExpand" Text="Sign in"  FontSize="18" TextColor="White" BackgroundColor="#1b4899" Pressed="LoginButton"></Button>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Label Text="Forgot password?" HorizontalOptions="Start"></Label>
+                    <Label Text="Sign up" HorizontalOptions="EndAndExpand" TextColor="#1b4899"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

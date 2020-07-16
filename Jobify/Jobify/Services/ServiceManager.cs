@@ -1,9 +1,6 @@
-﻿using Jobify.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 
 namespace Jobify.Services {
     public abstract class Service {
@@ -14,7 +11,8 @@ namespace Jobify.Services {
         //Variables 
         //(add services types here - they have to extend Service)
         private static Dictionary<Type, Service> Services { get; set; } = new Dictionary<Type, Service>() {
-            {typeof(JobService) , null}
+            {typeof(JobService) , null},
+            {typeof(UserService) , null}
         };
         //Constructor
         private ServiceManager() {
