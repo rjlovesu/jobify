@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms.Internals;
 
 namespace Jobify.Services {
     public abstract class Service {
-
+        public abstract void Init();
     }
 
     public sealed class ServiceManager {
@@ -20,9 +21,18 @@ namespace Jobify.Services {
             Services = Services
                 .Select(service => new KeyValuePair<Type, Service>(service.Key, (Service)Activator.CreateInstance(service.Key)))
                 .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            
         }
 
-        public Service GetService(Type type) {
+        
+
+        public static T GetService<T>() where T : Service{
+            return (T)Instance.getService(typeof(T));
+        }
+
+        
+
+        private Service getService(Type type) {
             try {
                 return Services[type];
             }catch(KeyNotFoundException e) {
@@ -31,17 +41,14 @@ namespace Jobify.Services {
             }
         }
 
-        //Singleton Pattern
-        private static readonly ServiceManager instance = new ServiceManager();
         static ServiceManager() {
         }
-        public static ServiceManager Instance {
-            get {
-                return instance;
-            }
+
+        public static ServiceManager Instance { get; } = new ServiceManager();
+
+        public static void Init() {
+            Services.ForEach(s => s.Value.Init());
         }
-
-
 
 
 

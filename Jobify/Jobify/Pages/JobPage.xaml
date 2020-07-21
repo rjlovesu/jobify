@@ -4,12 +4,40 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Jobify.Pages.JobPage">
+             x:Class="Jobify.Pages.JobPage"
+             Title="{Binding Job.Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30,15,30,15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="profile.png"></Image>
+                <StackLayout>
+                    <Label x:Name="Author">
+                        
+                        
+                    </Label>
+                    <Label Text="100 points">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <BoxView
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="30,5,30,5"
+                    Color="#555555">
+            </BoxView>
+            <ListView x:Name="List" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" VerticalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Start" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="{Binding Value}" VerticalTextAlignment="Start" FontSize="14"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button HorizontalOptions="FillAndExpand" Text="Accept"  FontSize="15" TextColor="White" BackgroundColor="#1b4899" Pressed="Accept"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

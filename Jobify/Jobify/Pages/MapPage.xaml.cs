@@ -1,4 +1,5 @@
-﻿using Jobify.Pages.Views;
+﻿using Jobify.Models;
+using Jobify.Pages.Views;
 using Jobify.Services;
 using System;
 using System.ComponentModel;
@@ -98,20 +99,32 @@ namespace Jobify.Pages {
                 Distance.FromKilometers(100))
                 );
 
+            MainMap.InfoWindowClicked += InfoWindowClicked;
             //adding pins where jobs are
-            ((JobService)ServiceManager.Instance.GetService(typeof(JobService))).GetAllJobs()
-                .ForEach(job => MainMap.Pins.Add(new Pin() {
-                    Label=job.Title,
-                    Position=job.Location
-                    
-                }));
+            ServiceManager.GetService<JobService>().GetAllJobs()
+                .ForEach(job => {
+                    var pin = new Pin() {
+                        Label = job.Title,
+                        Position = job.Location,
+                        BindingContext=job
+                    };
+                    MainMap.Pins.Add(pin);
+
+                });
 
             
 
         }
+
+        private void InfoWindowClicked(object sender, InfoWindowClickedEventArgs e) {
+            var job = (Job)e.Pin.BindingContext;
+            Navigation.PushAsync(new JobPage(job));
+        }
+
 
         void HamburgerButtonClicked(object sender, EventArgs e) {
             Main.IsVisible = true;
         }
     }
 }
+

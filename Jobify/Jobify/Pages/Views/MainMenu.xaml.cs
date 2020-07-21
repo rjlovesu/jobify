@@ -41,7 +41,7 @@ namespace Jobify.Pages.Views {
             var boxTapHandler = new TapGestureRecognizer();
             boxTapHandler.Tapped += CloseMenu;
             Background.GestureRecognizers.Add(boxTapHandler);
-            UserData.BindingContext = ((UserService)ServiceManager.Instance.GetService(typeof(UserService))).loggedUser;
+            UserData.BindingContext = ServiceManager.GetService<UserService>().loggedUser;
             
         }
 

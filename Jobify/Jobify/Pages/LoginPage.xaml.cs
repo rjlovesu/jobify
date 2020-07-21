@@ -17,7 +17,7 @@ namespace Jobify.Pages {
         }
 
         private async void LoginButton(object sender, EventArgs e) {
-            var user=((UserService)ServiceManager.Instance.GetService(typeof(UserService))).LoginUserByEmailAndPassword(UsernameEntry.Text,PasswordEntry.Text);
+            var user=ServiceManager.GetService<UserService>().LoginUserByEmailAndPassword(UsernameEntry.Text,PasswordEntry.Text);
             if(user != null) {
                 
                 await Navigation.PushAsync(new MapPage());

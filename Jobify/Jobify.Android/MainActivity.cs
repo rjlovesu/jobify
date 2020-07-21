@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android;
 
 namespace Jobify.Droid
 {
@@ -14,6 +15,10 @@ namespace Jobify.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            if(CheckSelfPermission(Manifest.Permission.AccessCoarseLocation) != (int)Permission.Granted) {
+                RequestPermissions(new string[] { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation }, 0);
+            }
 
 
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
