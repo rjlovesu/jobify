@@ -40,7 +40,6 @@ namespace Jobify.Pages {
                 ,new ListItem() { Name  = "Skills Required" ,Value = Job.SkillsRequired }
                 ,new ListItem() { Name  = "Address"         ,Value = address            }
                 ,new ListItem() { Name  = "When"            ,Value = Job.Schedlue       }
-                ,new ListItem() { Name  = "Skills Required" ,Value = Job.SkillsRequired }
                 ,new ListItem() { Name  = "Contacts"        ,Value = Job.PhoneNumber    }
                 ,new ListItem() { Name  = "Pay"             ,Value = Job.Pay            }
                 ,new ListItem() { Name  = "More Info"       ,Value = Job.Info           }

@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Android;
+using Xamarin.Forms.GoogleMaps.Android;
 
 namespace Jobify.Droid
 {
@@ -20,7 +21,11 @@ namespace Jobify.Droid
                 RequestPermissions(new string[] { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation }, 0);
             }
 
+            var platformConfig = new PlatformConfig {
+                BitmapDescriptorFactory = new BitmapConfig()
+            };
 
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState, platformConfig);
             Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);

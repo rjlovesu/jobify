@@ -106,7 +106,9 @@ namespace Jobify.Pages {
                     var pin = new Pin() {
                         Label = job.Title,
                         Position = job.Location,
-                        BindingContext=job
+                        BindingContext = job,
+                        Icon = BitmapDescriptorFactory.FromBundle("map_pin")
+                        
                     };
                     MainMap.Pins.Add(pin);
 
