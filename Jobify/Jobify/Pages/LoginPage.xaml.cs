@@ -1,11 +1,5 @@
-﻿using Jobify.Models;
-using Jobify.Services;
+﻿using Jobify.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-                      
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,17 +8,21 @@ namespace Jobify.Pages {
     public partial class LoginPage : ContentPage {
         public LoginPage() {
             InitializeComponent();
+            ServiceManager.GetService<UserService>().Logout();
         }
 
         private async void LoginButton(object sender, EventArgs e) {
             var user=ServiceManager.GetService<UserService>().LoginUserByEmailAndPassword(UsernameEntry.Text,PasswordEntry.Text);
             if(user != null) {
-                
-                await Navigation.PushAsync(new MapPage());
-                Navigation.RemovePage(this);
+
+                Application.Current.MainPage = new HamburgerMenuPage();
             } else {
                 await DisplayAlert("Incorrect Login data", "Password and/or email Incorrect","OK");
             }
+        }
+
+        void Entry_Completed(object sender, EventArgs e) {
+            LoginButton(sender, e);
         }
 
     }

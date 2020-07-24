@@ -1,0 +1,31 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jobify.Pages.HamburgerMenu"
+             Padding="5,10,0,0"
+             Title="MainMenu">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="profile.png" />
+            <StackLayout>
+                <Label x:Name="UserName" FontAttributes="Bold"/>
+                <Label Text="100 points" />
+            </StackLayout>
+        </StackLayout>
+        <ListView x:Name="listView" x:FieldModifier="public" ItemSelected="ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Icon}" />
+                            <Label Grid.Column="1" Text="{Binding Text}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

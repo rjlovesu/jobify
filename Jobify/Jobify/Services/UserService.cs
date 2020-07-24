@@ -134,6 +134,11 @@ namespace Jobify.Services {
         public override void Init() {
 
 		}
+
+		public void Logout() {
+			loggedUser = null;
+		}
+
     }
 
 

@@ -1,5 +1,4 @@
 ﻿using Jobify.Models;
-using Jobify.Pages.Views;
 using Jobify.Services;
 using System;
 using System.ComponentModel;
@@ -7,14 +6,13 @@ using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.GoogleMaps;
 using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Jobify.Pages {
 
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MapPage : ContentPage {
-        MainMenu Main;
 
         public MapPage() {
             InitializeComponent();
@@ -60,14 +58,7 @@ namespace Jobify.Pages {
                 Constraint.RelativeToParent(rl => rl.Width * 0.1),
                 Constraint.RelativeToParent(rl => rl.Width * 0.1));
 
-            Main = new MainMenu() {
-                IsVisible = false
-            };
-            RLayout.Children.Add(Main,
-                Constraint.Constant(0),
-                Constraint.Constant(0),
-                Constraint.RelativeToParent(rl => rl.Width * 1),
-                Constraint.RelativeToParent(rl => rl.Height * 1));
+            
         }
 
 
@@ -125,7 +116,7 @@ namespace Jobify.Pages {
 
 
         void HamburgerButtonClicked(object sender, EventArgs e) {
-            Main.IsVisible = true;
+            MessagingCenter.Send(EventArgs.Empty, "OpenMenu");
         }
     }
 }
