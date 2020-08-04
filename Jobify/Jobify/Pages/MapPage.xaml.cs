@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.GoogleMaps;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace Jobify.Pages {
@@ -52,13 +51,26 @@ namespace Jobify.Pages {
                 BackgroundColor = new Color(0, 0, 0, 0),
                 
             };
+            location_button.Clicked += LocationButtonClicked;
             RLayout.Children.Add(location_button,
                 Constraint.RelativeToParent(rl => rl.Width - rl.Width * 0.03 - rl.Width * 0.1),
                 Constraint.RelativeToParent(rl => rl.Height - rl.Width * 0.03 - rl.Width * 0.1),
                 Constraint.RelativeToParent(rl => rl.Width * 0.1),
                 Constraint.RelativeToParent(rl => rl.Width * 0.1));
 
-            
+            var new_job_button = new ImageButton() {
+                Source = "plus.png",
+                BackgroundColor = new Color(0, 0, 0, 0),
+
+            };
+            new_job_button.Clicked += NewJobButtonClicked;
+            RLayout.Children.Add(new_job_button,
+                Constraint.RelativeToParent(rl => rl.Width * 0.05),
+                Constraint.RelativeToParent(rl => rl.Height - rl.Width * 0.03 - rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1),
+                Constraint.RelativeToParent(rl => rl.Width * 0.1));
+
+
         }
 
 
@@ -114,9 +126,19 @@ namespace Jobify.Pages {
             Navigation.PushAsync(new JobPage(job));
         }
 
-
+        void NewJobButtonClicked(object sender, EventArgs e) {
+            Navigation.PushAsync(new NewJobTypePage(new Job()));
+        }
         void HamburgerButtonClicked(object sender, EventArgs e) {
             MessagingCenter.Send(EventArgs.Empty, "OpenMenu");
+        }
+
+        async void LocationButtonClicked(object sender, EventArgs e) {
+            var user_location = await Xamarin.Essentials.Geolocation.GetLocationAsync();
+            MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(
+                new Position(user_location.Latitude, user_location.Longitude),
+                Distance.FromKilometers(100))
+                );
         }
     }
 }

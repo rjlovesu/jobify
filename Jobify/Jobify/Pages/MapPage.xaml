@@ -11,13 +11,7 @@
         <map:Map x:Name="MainMap" HasZoomEnabled="True" IsShowingUser="True" BackgroundColor="#FFFFFF" 
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
-            <!--
-            <map:Map.ItemTemplate>
-                <DataTemplate>
-                    <map:Pin Position="{Binding Location}" Label="{Binding Name}" />
-                </DataTemplate>
-            </map:Map.ItemTemplate>
-            -->
         </map:Map>
     </RelativeLayout>
 </ContentPage>
+           

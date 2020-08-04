@@ -7,10 +7,10 @@
         public string Password { get; set; }
 
         public User(string email, string name, string surname, string password) {
-            Email       = email;
-            Name        = name;
-            Surname     = surname;
-            Password    = password;
+            Email       = email    ;
+            Name        = name     ;
+            Surname     = surname  ;
+            Password    = password ;
         }
     }
 }

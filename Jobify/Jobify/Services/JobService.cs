@@ -10,7 +10,7 @@ namespace Jobify.Services
         
 
         //TODO this will change
-        public static List<Job> allJobs = new List<Job>{
+        private static List<Job> allJobs = new List<Job>{
             new Job(new Position(56.882859, 23.957760),"Window Cleaning") { SkillsRequired ="Basic knowledge", PhoneNumber="29583958", Pay="25€", Info="I have all the necessary equipment"},
             new Job(new Position(57.075190, 24.316189),"Car Wash"),
             new Job(new Position(56.660865, 24.222805),"Janitor"),

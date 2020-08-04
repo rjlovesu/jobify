@@ -10,8 +10,8 @@ namespace Jobify.Services {
         public User loggedUser { get; private set; }
 
 
-        //TODO replace this
-        public static List<User> allUsers = new List<User>{
+		//TODO replace this
+		private static List<User> allUsers = new List<User>{
             new User("admin","Admin","Admin","admin")
             ,new User("janis.berzins@gmail.com","Jānis","Bērziņš","parole123")
             ,new User("XÆA-Xiimusk@gmail.com","X Æ A-Xii","Musk","password321")

@@ -13,7 +13,8 @@ namespace Jobify.Services {
         //(add services types here - they have to extend Service)
         private static Dictionary<Type, Service> Services { get; set; } = new Dictionary<Type, Service>() {
             {typeof(JobService) , null},
-            {typeof(UserService) , null}
+            {typeof(UserService) , null},
+            {typeof(JobTypeService) , null},
         };
         //Constructor
         private ServiceManager() {
