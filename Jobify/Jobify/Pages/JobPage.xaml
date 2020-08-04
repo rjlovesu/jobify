@@ -25,7 +25,7 @@
                     Margin="30,5,30,5"
                     Color="#555555">
             </BoxView>
-            <ListView x:Name="List" HasUnevenRows="true">
+            <ListView x:Name="List" HasUnevenRows="true" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

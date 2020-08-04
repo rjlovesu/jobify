@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Jobify.Pages.JobCreated"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#1b4899" VerticalOptions="FillAndExpand">
+                <ImageButton Source="x.png" Clicked="Close" HorizontalOptions="EndAndExpand" BackgroundColor=" #00000000" Scale="0.5"></ImageButton>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="All done!" TextColor="White" FontSize="22" 
+                HorizontalOptions="Center" />
+                    <Label Text="Thanks for using Jobify." TextColor="White" FontSize="18"
+                HorizontalOptions="Center" />
+                </StackLayout>
+                <Button Text="Close" Clicked="Close"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

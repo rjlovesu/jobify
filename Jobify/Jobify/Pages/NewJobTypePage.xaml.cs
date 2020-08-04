@@ -23,10 +23,8 @@ namespace Jobify.Pages {
             Entry.Completed += Entry_Completed;
             ToolbarItems.Add(new ToolbarItem("Exit", "x.png", async () =>
             {
-                
-                while(Navigation.NavigationStack.Count > 1) {
-                    await Navigation.PopAsync();
-                }
+
+                await Navigation.PopToRootAsync();
             }));
 
         }
@@ -61,7 +59,9 @@ namespace Jobify.Pages {
                     }
                 }
             }
-            //TODO navigate to next page
+
+            //navigate to next page
+            Navigation.PushAsync(new NewJobSkillsRequiredPage(Job));
         }
     }
 }

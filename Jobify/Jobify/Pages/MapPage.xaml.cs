@@ -99,7 +99,7 @@ namespace Jobify.Pages {
             var user_location = await Xamarin.Essentials.Geolocation.GetLocationAsync();
             MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(user_location.Latitude, user_location.Longitude),
-                Distance.FromKilometers(100))
+                Distance.FromKilometers(20))
                 );
 
             MainMap.InfoWindowClicked += InfoWindowClicked;
@@ -137,9 +137,8 @@ namespace Jobify.Pages {
             var user_location = await Xamarin.Essentials.Geolocation.GetLocationAsync();
             MainMap.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(user_location.Latitude, user_location.Longitude),
-                Distance.FromKilometers(100))
+                Distance.FromKilometers(20))
                 );
         }
     }
 }
-

@@ -36,6 +36,11 @@ namespace Jobify.Services
             return allJobs.FirstOrDefault(j => j.Title.Equals(title));
         }
 
+        public void saveJob(Job job) {
+            //TODO think about this
+            allJobs.Add(job);
+        }
+
         public override void Init() {
             var job = FindFirstJobByTitle("Window Cleaning");
             job.Author = ServiceManager.GetService<UserService>().FindUserByEmail("zack.example@gmail.com");
