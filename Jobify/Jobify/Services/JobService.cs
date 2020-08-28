@@ -1,4 +1,4 @@
-﻿using Jobify.Models;
+﻿using Jobify.Shared.Models;
 using System.Collections.Generic;
 using Xamarin.Forms.GoogleMaps;
 using System.Linq;

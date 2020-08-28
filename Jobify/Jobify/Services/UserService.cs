@@ -1,7 +1,5 @@
-﻿using Jobify.Models;
-using System;
+﻿using Jobify.Shared.Models;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Jobify.Services {

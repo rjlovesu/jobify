@@ -1,8 +1,6 @@
-﻿
-using System;
-using Xamarin.Forms.GoogleMaps;
+﻿using Xamarin.Forms.GoogleMaps;
 
-namespace Jobify.Models {
+namespace Jobify.Shared.Models {
     public class Job {
         public Position Location     { get; set; }
         public string Title          { get; set; }
@@ -15,7 +13,7 @@ namespace Jobify.Models {
         public string Pay            { get; set; } = "";
         public string Info           { get; set; } = "";
         public User Author           { get; set; }
-        public JobType JobType       { get; set; }
+        //public JobType JobType       { get; set; }
 
         public Job(Position location, string title) {
             Location = location;

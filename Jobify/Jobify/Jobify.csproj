@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Jobify.Shared\Jobify.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="JSONstyles\MapStyle.json" />
   </ItemGroup>
 
@@ -36,11 +40,11 @@
     <Compile Update="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\NewJobTypePage.xaml.cs">
-      <DependentUpon>NewJobTypePage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Pages\JobCreated.xaml.cs">
       <DependentUpon>JobCreated.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\NewJob\NewJobNavAbstr.xaml.cs">
+      <DependentUpon>NewJobNavAbstr.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -54,13 +58,10 @@
     <EmbeddedResource Update="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\NewJobPageFormEntrySuper.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Pages\NewJobTypePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Pages\JobCreated.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\NewJob\NewJobNavAbstr.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

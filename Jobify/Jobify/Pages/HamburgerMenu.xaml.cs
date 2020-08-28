@@ -14,12 +14,12 @@ namespace Jobify.Pages{
             InitializeComponent();
 
             listView.ItemsSource = new[] {
-                new MainMenuItem("Account Details"  ,"triangle.png"     ,AccountDetails ),
+                /*new MainMenuItem("Account Details"  ,"triangle.png"     ,AccountDetails ),
                 new MainMenuItem("Security"         ,"shield.png"       ,Security       ),
                 new MainMenuItem("Payments"         ,"play_many.png"    ,Payments       ),
                 new MainMenuItem("FAQ"              ,"question.png"     ,FAQ            ),
                 new MainMenuItem("Support"          ,"comment.png"      ,Support        ),
-                new MainMenuItem("Settings"         ,"cog.png"          ,Settings       ),
+                new MainMenuItem("Settings"         ,"cog.png"          ,Settings       ),*/
                 new MainMenuItem("Logout"           ,"exit.png"         ,Logout         )  
             };
 

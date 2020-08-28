@@ -1,4 +1,4 @@
-﻿using Jobify.Models;
+﻿using Jobify.Shared.Models;
 using Jobify.Services;
 using System;
 using Xamarin.Forms;
@@ -12,6 +12,7 @@ namespace Jobify.Pages {
             InitializeComponent();
 
             ServiceManager.GetService<JobService>().saveJob(job);
+            MessagingCenter.Send(EventArgs.Empty, "RefreshData");
             //TODO save job
         }
 

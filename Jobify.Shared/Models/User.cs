@@ -1,4 +1,4 @@
-﻿namespace Jobify.Models {
+﻿namespace Jobify.Shared.Models {
     public class User {
         public string Email { get; set; }
         public string Name { get; set; }

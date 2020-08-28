@@ -1,16 +1,17 @@
-﻿using Jobify.Models;
+﻿using Jobify.Shared.Models;
 using System;
 using Xamarin.Forms.Xaml;
 
-namespace Jobify.Pages {
+namespace Jobify.Pages.NewJob {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewJobDate : NewJobPageFormEntrySuper {
-        public NewJobDate(Job job) : base("When?", "Date", job) {
+    public partial class NewJobDate : NewJobNavSimpleAbstr {
+        public NewJobDate(Job job) : base(job) {
+            Title = "Date";
+            Label = "When?";
         }
 
-        public override void NextPage(object sender, EventArgs e) {
-
-            Job.Schedlue = GetEntryText();
+        protected override void NextPage(object sender, EventArgs e) {
+            Job.Schedlue = Entry;
             if(string.IsNullOrEmpty(Job.Schedlue)) {
                 DisplayAlert("Missing Value ", "Enter info about date and time!", "OK");
                 return;
